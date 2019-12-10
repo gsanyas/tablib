@@ -7,3 +7,4 @@ pandas
 pyyaml
 xlrd
 xlwt
+Pillow

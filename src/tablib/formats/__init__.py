@@ -36,6 +36,10 @@ uninstalled_format_messages = {
         "The 'yaml' format is not available. You may want to install the pyyaml "
         "package (or `pip install tablib[yaml]`)."
     ),
+    'image_format': (
+	"This 'image_format' is not available. You may want to install the PIL"
+	"package (or `pip install tablib[image_format]`)"
+    ),
 }
 
 
@@ -124,6 +128,8 @@ class Registry:
         if find_spec('pandas'):
             self.register('df', 'tablib.formats._df.DataFrameFormat')
         self.register('rst', 'tablib.formats._rst.ReSTFormat')
+        if find_spec('Pillow'):
+            self.register('image_format', 'tablib.formats._image_format.ImageFormat')
 
     def formats(self):
         for key, frm in self._formats.items():
