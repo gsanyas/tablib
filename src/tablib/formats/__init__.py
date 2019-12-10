@@ -37,7 +37,7 @@ uninstalled_format_messages = {
         "package (or `pip install tablib[yaml]`)."
     ),
     'image_format': (
-	"This 'image_format' is not available. You may want to install the PIL"
+	"This 'image_format' is not available. You may want to install the Pillow"
 	"package (or `pip install tablib[image_format]`)"
     ),
 }

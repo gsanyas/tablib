@@ -10,7 +10,7 @@ class ImageFormat:
     extensions = ('jpeg', 'png')
 
     @classmethod
-    def size_table(dataset, font):
+    def size_table(cls,dataset, font):
         """function defining the height and width of columns and lines
         in the dataset"""
 
@@ -40,7 +40,7 @@ class ImageFormat:
         """
 
         font = ImageFont.load_default().font
-        (column_width, line_height) = JPEGFormat.size_table(dataset,
+        (column_width, line_height) = ImageFormat.size_table(dataset,
                 font)
 
         # image creation
