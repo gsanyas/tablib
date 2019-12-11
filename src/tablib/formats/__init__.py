@@ -111,7 +111,7 @@ class Registry:
         if find_spec('tabulate'):
             self.register('cli', 'tablib.formats._cli.CLIFormat')
         if find_spec('PIL'):
-            self.register('image_format', 'tablib.formats._png.png')
+            self.register('image_format', 'tablib.formats._png.PNGFormat')
 
     def formats(self):
         for key, frm in self._formats.items():
