@@ -1057,8 +1057,8 @@ class JSONTests(BaseTestCase):
 	data = [('Mathieu', 'Frémaux'), ('Daniel', 'Dos Santos')]
 	dataset = tablib.Dataset(*data, headers = headers)
 	
-	dataset_image_format = dataset.export( dataset , format )
-	self.assertEqual(type(dataset_image_format), type(dataset))'
+	dataset_image_format = dataset.export(dataset)
+	self.assertEqual(type(dataset_image_format), format)'
 
 class YAMLTests(BaseTestCase):
     def test_yaml_format_detect(self):
