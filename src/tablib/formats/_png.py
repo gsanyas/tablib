@@ -1,7 +1,6 @@
-from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont
 from io import BytesIO
+
+from PIL import Image, ImageDraw, ImageFont
 
 
 class PNGFormat:
