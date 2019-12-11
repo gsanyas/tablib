@@ -11,6 +11,7 @@ from pathlib import Path
 from uuid import uuid4
 
 import tablib
+import PIL
 from MarkupPy import markup
 from tablib.core import Row, detect_format
 from tablib.exceptions import UnsupportedFormat
