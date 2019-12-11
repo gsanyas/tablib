@@ -8,3 +8,4 @@ pyyaml
 tabulate
 xlrd
 xlwt
+Pillow
