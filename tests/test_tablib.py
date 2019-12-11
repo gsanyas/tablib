@@ -1306,6 +1306,6 @@ class CliTests(BaseTestCase):
 
 class PNGTests(BaseTestCase):
     def test_png_export(self):
-	    """Verify that the type of export is png"""
-	    dataset_png = self.founders.export('png')
-	    self.assertEqual(type(dataset_png), 'png')
+        """Verify that the type of export is png"""
+        dataset_png = self.founders.export('png')
+        self.assertEqual(type(dataset_png), 'png')
