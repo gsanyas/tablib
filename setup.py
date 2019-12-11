@@ -41,6 +41,6 @@ setup(
         'xls': ['xlrd', 'xlwt'],
         'xlsx': ['openpyxl>=2.4.0'],
         'yaml': ['pyyaml'],
-	'image_format' : ['Pillow']
+        'png': ['Pillow'],
     },
 )

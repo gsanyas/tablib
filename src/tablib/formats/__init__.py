@@ -19,7 +19,7 @@ uninstalled_format_messages = {
     "xls": {"package_name": "odfpy and xlwt packages", "extras_name": "ods"},
     "xlsx": {"package_name": "openpyxl package", "extras_name": "xlsx"},
     "yaml": {"package_name": "pyyaml package", "extras_name": "yaml"},
-    "image_format": {"package_name": "Pillow package", "extras_name": "image_format"},
+    "png": {"package_name": "Pillow package", "extras_name": "png"},
 }
 
 
@@ -110,8 +110,8 @@ class Registry:
         self.register('rst', 'tablib.formats._rst.ReSTFormat')
         if find_spec('tabulate'):
             self.register('cli', 'tablib.formats._cli.CLIFormat')
-        if find_spec('Pillow'):
-            self.register('image_format', 'tablib.formats._image_format.ImageFormat')
+        if find_spec('PIL'):
+            self.register('image_format', 'tablib.formats._png.png')
 
     def formats(self):
         for key, frm in self._formats.items():

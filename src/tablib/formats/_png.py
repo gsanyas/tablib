@@ -4,10 +4,10 @@ from PIL import ImageFont
 from io import BytesIO
 
 
-class ImageFormat:
+class PNGFormat:
 
-    title = 'image_format'
-    extensions = ('jpeg', 'png')
+    title = 'png'
+    extensions = ('png',)
 
     @classmethod
     def size_table(cls,dataset, font):
@@ -32,7 +32,7 @@ class ImageFormat:
         return (column_width, line_height)
 
     @classmethod
-    def export_set(cls, dataset, format='png'):
+    def export_set(cls, dataset):
         """Returns image representation of dataset
 
         :param dataset: dataset to represent
@@ -40,7 +40,7 @@ class ImageFormat:
         """
 
         font = ImageFont.load_default().font
-        (column_width, line_height) = ImageFormat.size_table(dataset,
+        (column_width, line_height) = PNGFormat.size_table(dataset,
                 font)
 
         # image creation
@@ -69,7 +69,7 @@ class ImageFormat:
         # format conversion
 
         with BytesIO() as f:
-            img.save(f, format=format)
+            img.save(f, format="png")
             f.seek(0)
             img_jpg = Image.open(f)
         return img_jpg

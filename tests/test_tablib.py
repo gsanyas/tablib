@@ -43,7 +43,7 @@ class TablibTestCase(BaseTestCase):
     def _test_export_data_in_all_formats(self, dataset, exclude=()):
         all_formats = [
             'json', 'yaml', 'csv', 'tsv', 'xls', 'xlsx', 'ods', 'html', 'jira',
-            'latex', 'df', 'rst','image_format',
+            'latex', 'df', 'rst','png',
         ]
         for format_ in all_formats:
             if format_ in exclude:
@@ -332,9 +332,9 @@ class TablibTestCase(BaseTestCase):
 
         _bunk = '¡¡¡¡¡¡---///\n\n\n¡¡£™∞¢£§∞§¶•¶ª∞¶•ªº••ª–º§•†•§º¶•†¥ª–º•§ƒø¥¨©πƒø†ˆ¥ç©¨√øˆ¥≈†ƒ¥ç©ø¨çˆ¥ƒçø¶'
         self.assertEqual(tablib.detect_format(_bunk), None)
-
-	_image_format = self.founders.export('image_format')
-	self.asserteQUAL(tablib.detect_format(_image_format), 'image_format')
+        
+        _image_format = self.founders.export('png')
+        self.asserteQUAL(tablib.detect_format(_png), 'png')
 
     def test_transpose(self):
         """Transpose a dataset."""
