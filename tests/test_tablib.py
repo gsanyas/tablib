@@ -1050,14 +1050,6 @@ class JSONTests(BaseTestCase):
 
         self.assertEqual(founders_json, expected_json)
 
-    def test_image_format_export(self):
-        """Verify exporting object is a image"""
-        format ="png"
-        headers = ('fisrt_name', 'last_name')
-        data = [('Mathieu', 'Frémaux'), ('Daniel', 'Dos Santos')]
-        dataset = tablib.Dataset(*data, headers = headers)
-        dataset_image_format = dataset.export(dataset)
-        self.assertEqual(type(dataset_image_format), format)
 
 class YAMLTests(BaseTestCase):
     def test_yaml_format_detect(self):
@@ -1310,3 +1302,10 @@ class CliTests(BaseTestCase):
 
     def test_cli_export_grid(self):
         self.assertEqual('+---+---+---+\n| a | b | c |\n+---+---+---+', tablib.Dataset(['a','b','c']).export('cli', tablefmt='grid'))
+
+
+class PNGTests(BaseTestCase):
+    def test_png_export(self):
+	    """Verify that the type of export is png"""
+	    dataset_png = self.founders.export('png')
+	    self.assertEqual(type(dataset_png), 'png')
